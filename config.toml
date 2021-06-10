@@ -1,0 +1,46 @@
+baseURL = "https://andrerfcsantos.dev"
+languageCode = "en-us"
+title = "André Santos"
+theme = "m10c"
+
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+#  [[menu.main]]
+#    identifier = "tags"
+#    name = "Tags"
+#    url = "/tags/"
+#    weight = 2
+#  [[menu.main]]
+#    identifier = "about"
+#    name = "About"
+#    url = "/about/"
+#    weight = 3
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 4
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 5
+
+[params]
+  author = "André Santos"
+  description = "Software Developer @ VILT. Golang lover. F1 fan. Always looking to learn new things."
+  avatar = "images/dinossaur.jfif"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/andrerfcsantos"
+  [[params.social]]
+    icon = "twitter"
+    name = "Twitter"
+    url = "https://twitter.com/andrerfcsantos"
