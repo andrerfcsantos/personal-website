@@ -1,6 +1,13 @@
-# Hugo default output directory
+# Generated files by hugo
 /public/
-/resources/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
 
-# OSX
-.DS_Store
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
