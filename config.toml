@@ -34,7 +34,7 @@ theme = "m10c"
 [params]
   author = "André Santos"
   description = "Software Developer @ VILT. Golang lover. F1 fan. Always looking to learn new things."
-  avatar = "images/dinossaur.jfif"
+  avatar = "images/dinossaur.jpeg"
   menu_item_separator = " - "
   [[params.social]]
     icon = "github"
