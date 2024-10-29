@@ -44,3 +44,7 @@ theme = "m10c"
     icon = "twitter"
     name = "Twitter"
     url = "https://twitter.com/andrerfcsantos"
+  [[params.social]]
+    icon = "linkedin"
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/andrerfcsantos"
