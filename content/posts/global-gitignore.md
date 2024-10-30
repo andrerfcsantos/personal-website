@@ -8,7 +8,21 @@ Most git repositories have a `.gitignore` file in it. If you are new to Git, thi
 
 But do you know that you can have a global `.gitignore` file that can be applied to all your repositories?
 
-This is possible because one of the configurations Git has is `core.excludesFile`. With this option, you can pass a path to a file, and Git wil always use that file when considering files to ignore.
+This can be very useful, mainly for two reasons:
+
+1. **Ignore files once for all your projects**
+   
+   For files that you know you always want to ignore, you can setup git to ignore that file once, instead of updating every `.gitignore` of every project where you want to ignore those files.
+
+2. **Less noise in a project's `.gitignore`**
+   
+   If every contributor to a project adds a specific directory or file they want to ignore, the `.gitignore` file for the project can become cluttered very quickly. Not only because a lot of things will be added to it, but also because of the number of changes to the `.gitignore` file the maintainers of a project will have to understand and approve. Having this global gitignore ensures that the project's `.gitignore` is as clean as possible, and that you have the files you want to be ignored, even if maintainers don't agree to add it to the project's gitignore file.
+
+Despite the convenience of having a global gitignore, most people I talk to don't know this is something they can do. And some of them have been using git for several years now. In this post my goal is to show how to setup one. 
+
+## How to setup your global gitignore
+
+Setting up a global gitignore is possible because one of the configurations Git has is `core.excludesFile`. With this option, you can pass a path to a file, and Git wil always use that file when considering files to ignore.
 
 Here is how I setup my global gitignore:
 
@@ -30,13 +44,17 @@ This is a configuration I always do when I setup a new computer where I will be 
 
 ## What to put in the global gitignore file?
 
-The main use of the global gitignore file for me is to have Git ignore those hidden folders IDEs sometimes create. I'm taking about folders like `~/.idea` for Jetbrains IDEs, and `.vscode` for Visual Studio Code. My `~/.gitignore` file looks like this currently:
+The main use of the global gitignore file for me is to have Git ignore those hidden folders IDEs and other tools sometimes create. I'm taking about folders like `~/.idea` for Jetbrains IDEs, and `.vscode` for Visual Studio Code. My `~/.gitignore` file looks like this currently:
 
 ```gitignore
 .idea/
 .vscode/
 ```
 
-I want Git to ignore these folders across all my repositories, so I don't accidentally commit and push my specific IDE configurations to any repository.
+The reason I like to keep these directories ignored everywhere is twofold. Firstly, I don't accidentally commit and push my IDE configurations to the repositories I contribute to. Secondly, I understand that I want to ignore these folders because I use those IDEs. But the IDE choice is a matter of personal preference, and not everyone in a project will want to ignore the same files as me. And I understand a project's maintainer to not wanting to have to maintain a list of ignored files for every specific IDE or tool their contributors want to use. 
 
-One alternative to having these folders in the global gitignore would be to add them to each repo's `.gitignore` file instead. However, if you contribute to several projects, you'll find that not all maintainers want all their `.gitignore` files to support every IDE folder, or every specific file/folder you might want to ignore. Having them ignored globally on all your projects works really well in these scenarios.
+Other than IDEs, there are other tools that create files in a project's directory, which means that files created by those tools are good candidates to be in your global gitignore file. If the tool is very specific to your needs, it might make sense to make the files that tool creates in your global gitignore. On the other hand, if that tool is something that a lot of people that use the repo are expected to use, it might make more sense to add it to the project's `.gitignore`.
+
+Always use your best judgement when ignoring git files globally as opposed to locally in each project, but now you know you have that choice!
+
+Let me know if you are currently using a global gitignore file, or are considering using one. And if so, what files will you ignore globally?
