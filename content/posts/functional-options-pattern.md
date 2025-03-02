@@ -172,13 +172,13 @@ type RenderingOption func(*RenderingOptions)
 func WithTextColor(color string) RenderingOption {
     return func(options *RenderingOptions) {
         options.textColor = color
- }
+    }
 }
 
 func WithTextSize(size int) RenderingOption {
     return func(options *RenderingOptions) {
         options.fontSize = size
- }
+    }
 }
 
 // Keep the default options
@@ -224,7 +224,7 @@ func Render(text string, options ...RenderingOption) {
     // Go through all the options passed and apply/merge them to the defaults
     for _, opt := range options {
         opt(&finalOptions)
- }
+    }
 
     // Render text using finalOptions
 }
@@ -254,7 +254,7 @@ type ServerOption func(*Server)
 func WithPort(port int) ServerOption {
     return func(server *Server) {
         server.port = port
- }
+    }
 } 
 
 func NewServer(options ...ServerOption) *Server {
@@ -273,7 +273,7 @@ In the previous example, we could have made the function `WithPort` be called `H
 func HTTPPort(port int) ServerOption {
     return func(server *Server) {
         server.Port = port
- }
+    }
 }
 
 // We would call it like
